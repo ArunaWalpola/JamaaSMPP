@@ -196,6 +196,7 @@ namespace JamaaTech.Smpp.Net.Client
             {
                 if (_Log.IsDebugEnabled) _Log.DebugFormat("SendMessage SendSmPDU: {0}", LoggingExtensions.DumpString(pdu, vSmppEncodingService));
                 ResponsePDU resp = SendPdu(pdu, timeOut);
+                if (_Log.IsDebugEnabled) _Log.DebugFormat("SendMessage ResponsePDU: {0}", LoggingExtensions.DumpString(resp, vSmppEncodingService));
                 var submitSmResp = resp as SubmitSmResp;
                 if (submitSmResp != null)
                 {
